@@ -1,0 +1,128 @@
+{
+  "name": "PromptMaster-Free",
+  "version": "1.0.0",
+  "pages": [
+    {
+      "id": "main",
+      "title": "PromptMaster",
+      "background": "#0F172A",
+      "components": [
+        {
+          "type": "Text",
+          "text": "Prompt Master",
+          "fontSize": 28,
+          "color": "#FFFFFF",
+          "align": "center",
+          "top": "8%",
+          "left": "0",
+          "width": "100%"
+        },
+        {
+          "type": "TextField",
+          "id": "inputText",
+          "hint": "Describe your idea or leave blank",
+          "top": "18%",
+          "left": "8%",
+          "width": "84%",
+          "height": 50,
+          "background": "#FFFFFF20",
+          "borderRadius": 12,
+          "color": "#FFFFFF"
+        },
+        {
+          "type": "Button",
+          "text": "Pick Image (optional)",
+          "top": "30%",
+          "left": "8%",
+          "width": "84%",
+          "height": 48,
+          "background": "#6366F1",
+          "color": "#FFFFFF",
+          "borderRadius": 12,
+          "onClick": "pickImage"
+        },
+        {
+          "type": "Button",
+          "text": "Generate Prompt",
+          "top": "42%",
+          "left": "8%",
+          "width": "84%",
+          "height": 52,
+          "background": "#EC4899",
+          "color": "#FFFFFF",
+          "borderRadius": 12,
+          "onClick": "generatePrompt"
+        },
+        {
+          "type": "Label",
+          "id": "resultText",
+          "text": "Your prompt will appear here",
+          "top": "56%",
+          "left": "8%",
+          "width": "84%",
+          "height": 120,
+          "background": "#FFFFFF10",
+          "borderRadius": 12,
+          "color": "#FFFFFF",
+          "multiline": true
+        },
+        {
+          "type": "Button",
+          "text": "Kling AI",
+          "top": "78%",
+          "left": "8%",
+          "width": "40%",
+          "height": 44,
+          "background": "#10B981",
+          "color": "#FFFFFF",
+          "borderRadius": 12,
+          "onClick": "openKling"
+        },
+        {
+          "type": "Button",
+          "text": "MidJourney",
+          "top": "78%",
+          "left": "52%",
+          "width": "40%",
+          "height": 44,
+          "background": "#F59E0B",
+          "color": "#FFFFFF",
+          "borderRadius": 12,
+          "onClick": "openMidJourney"
+        },
+        {
+          "type": "Button",
+          "text": "Runway ML",
+          "top": "88%",
+          "left": "8%",
+          "width": "40%",
+          "height": 44,
+          "background": "#EF4444",
+          "color": "#FFFFFF",
+          "borderRadius": 12,
+          "onClick": "openRunway"
+        },
+        {
+          "type": "Button",
+          "text": "Leonardo",
+          "top": "88%",
+          "left": "52%",
+          "width": "40%",
+          "height": 44,
+          "background": "#8B5CF6",
+          "color": "#FFFFFF",
+          "borderRadius": 12,
+          "onClick": "openLeonardo"
+        }
+      ]
+    }
+  ],
+  "actions": {
+    "pickImage": "Utils.pickImage()",
+    "generatePrompt": "resultText.text = 'Ultra-detailed prompt: ' + inputText.text",
+    "openKling": "Utils.openUrl('https://klingai.com/create?prompt=' + encodeURIComponent(inputText.text))",
+    "openMidJourney": "Utils.openUrl('https://www.midjourney.com/app/imagine?text=' + encodeURIComponent(inputText.text))",
+    "openRunway": "Utils.openUrl('https://runwayml.com/create?prompt=' + encodeURIComponent(inputText.text))",
+    "openLeonardo": "Utils.openUrl('https://app.leonardo.ai/create?prompt=' + encodeURIComponent(inputText.text))"
+  }
+}
