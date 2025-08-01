@@ -1,0 +1,2 @@
+# Prompt-Master
+generates prompts 
